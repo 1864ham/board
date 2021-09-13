@@ -2,11 +2,11 @@
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <th:block th:replace="~{/layout/basic :: setContent(~{this::content})}">
     <th:block th:fragment="content">
-        <h1 class="mt-4">Guestbook Read Page</h1>
+        <h1 class="mt-4">Board Read Page</h1>
         <div class="form-group">
             <label>글번호</label>
-            <input type="text" class="form-control" name="gno"
-                   th:value="${dto.gno}" readonly>
+            <input type="text" class="form-control" name="bno"
+                   th:value="${dto.bno}" readonly>
         </div>
         <div class="form-group">
             <label>Title</label>
@@ -21,7 +21,7 @@
         <div class="form-group">
             <label>Writer</label>
             <input type="text" class="form-control" name="writer"
-                   th:value="${dto.writer}" readonly>
+                   th:value="${dto.writerName}" readonly>
         </div>
         <div class="form-group">
             <label>등록 일자</label>
@@ -34,12 +34,12 @@
                    th:value="${#temporals.format(dto.modDate,'yyyy/MM/dd HH:mm:ss')}">
         </div>
         <div style="margin-bottom: 20px;"></div>
-        <a th:href="@{/guestbook/modify(gno=${dto.gno},page=${requestDTO.page},
+        <a th:href="@{/board/modify(bno=${dto.bno},page=${requestDTO.page},
                                         type=${requestDTO.type},
                                         keyword = ${requestDTO.keyword})}">
             <button class="btn btn-primary">수정하기</button>
         </a>
-        <a th:href="@{/guestbook/list(page=${requestDTO.page},
+        <a th:href="@{/board/list(page=${requestDTO.page},
                                         type=${requestDTO.type},
                                         keyword = ${requestDTO.keyword})}">
             <button class="btn btn-info">목록보기</button>
