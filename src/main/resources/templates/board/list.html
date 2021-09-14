@@ -41,7 +41,7 @@
                 th:data-type="${pageRequestDTO.type}" th:data-keyword="${pageRequestDTO.keyword}"
                 th:onclick="|javascript:read('${dto.bno}','${result.page}',this.getAttribute('data-type'),this.getAttribute('data-keyword'))|">
                 <th scope="row">[[${dto.bno}]]</th>
-                <td>[[${dto.title}]]</td>
+                <td>[[${dto.title}]] ---------[<b th th:text="${dto.replyCnt}"></b>]</td>
                 <td>[[${dto.writerName}]]</td>
                 <td>[[${#temporals.format(dto.regDate, 'yyyy/MM/dd')}]]</td>
             </tr>
